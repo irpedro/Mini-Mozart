@@ -3,6 +3,7 @@ from config import screen
 from assets import load_assets
 from utils.game import jogo
 
+
 def main():
     background, notas = load_assets()
     jogo(background, notas)
