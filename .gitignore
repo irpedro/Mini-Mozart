@@ -1,0 +1,19 @@
+nota_partitura.png
+nota_partitura.ly
+nota_partitura.pdf
+
+# Ignorar arquivos .pyc
+*.pyc
+__pycache__/
+
+# Ignorar arquivos temporários do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar ambientes virtuais
+venv/
+.env/
+
+# Ignorar configurações de IDEs
+.vscode/
+.idea/

@@ -14,7 +14,7 @@ from config import (
 from utils.display import (
     draw_buttons, carregar_imagem_partitura, 
     desenhar_interface, atualizar_nota_atual, 
-    exibir_game_over, desenha_tempo_ganho_perdido
+    exibir_game_over
 )
 
 # Importa partiruras do módulo music_sheet
