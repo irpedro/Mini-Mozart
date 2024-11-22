@@ -14,7 +14,7 @@ from config import (
 from utils.display import (
     draw_buttons, carregar_imagem_partitura, 
     desenhar_interface, atualizar_nota_atual, 
-    exibir_game_over, desenha_tempo_ganho_perdido
+    exibir_game_over
 )
 
 # Importa partiruras do módulo music_sheet
@@ -53,17 +53,38 @@ def configurar_jogo(notas):
     
     return vidas, feedback, feedback_time, pontuacao, combo, nota_atual, partitura_img, partitura_rect, buttons, close_button
 
-def processar_eventos (
-        buttons, close_button, nota_atual, notas, feedback, 
-        feedback_time, vidas, pontuacao, combo, partitura_img, 
-        partitura_rect, tempo_restante, tempo_ganho, tempo_perdido, tempo_habilitado
-    ):
-
+def processar_eventos(
+    buttons, close_button, nota_atual, notas, feedback,
+    feedback_time, vidas, pontuacao, combo, partitura_img,
+    partitura_rect, tempo_restante, tempo_ganho, tempo_perdido, tempo_habilitado
+):
     rodando = True
     key_to_note = {
         pygame.K_a: 'Do', pygame.K_s: 'Re', pygame.K_d: 'Mi',
         pygame.K_f: 'Fa', pygame.K_j: 'Sol', pygame.K_k: 'La', pygame.K_l: 'Si',
     }
+
+    def avaliar_nota(nota_selecionada, nota_correta):
+        #Avalia se a nota tocada está correta e atualiza as variáveis.
+        nonlocal nota_atual, partitura_img, partitura_rect
+        nonlocal feedback, feedback_time, combo, pontuacao, vidas, tempo_restante
+        
+        tocar_nota(nota_selecionada, notas)
+        if nota_selecionada == nota_correta:
+            # Atualiza a nota, partitura e informações relacionadas
+            nota_atual, partitura_img, partitura_rect = atualizar_nota_atual(notas, nota_correta)
+            feedback = "Acertou!"
+            combo += 1
+            pontuacao += 100 * combo
+            if tempo_habilitado:
+                tempo_restante += tempo_ganho
+        else:
+            feedback = "Errou!"
+            combo = 0
+            vidas -= 1
+            if tempo_habilitado:
+                tempo_restante -= tempo_perdido
+        feedback_time = time.time()
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -74,42 +95,9 @@ def processar_eventos (
             else:
                 for nota, rect in buttons.items():
                     if rect.collidepoint(event.pos):
-                        tocar_nota(nota, notas)
-                        if nota == nota_atual:
-                            nota_atual, partitura_img, partitura_rect = atualizar_nota_atual(notas, nota_atual)
-                            feedback = f"Acertou!"
-                            feedback_time = time.time()
-                            combo += 1
-                            pontuacao += 100 * combo
-                            if tempo_habilitado:
-                                tempo_restante += tempo_ganho  # Adiciona o tempo ganho
-                        else:
-                            feedback = f"Errou!"
-                            feedback_time = time.time()
-                            vidas -= 1
-                            combo = 0
-                            if tempo_habilitado:
-                                tempo_restante -= tempo_perdido  # Subtrai o tempo perdido
-
-        elif event.type == pygame.KEYDOWN:
-            if event.key in key_to_note:
-                nota = key_to_note[event.key]
-                tocar_nota(nota, notas)
-                if nota == nota_atual:
-                    nota_atual, partitura_img, partitura_rect = atualizar_nota_atual(notas, nota_atual)
-                    feedback = f"Acertou!"
-                    feedback_time = time.time()
-                    combo += 1
-                    pontuacao += 100 * combo
-                    if tempo_habilitado:
-                        tempo_restante += tempo_ganho  # Adiciona o tempo ganho
-                else:
-                    feedback = f"Errou!"
-                    feedback_time = time.time()
-                    vidas -= 1
-                    combo = 0
-                    if tempo_habilitado:
-                        tempo_restante -= tempo_perdido  # Subtrai o tempo perdido
+                        avaliar_nota(nota, nota_atual)
+        elif event.type == pygame.KEYDOWN and event.key in key_to_note:
+            avaliar_nota(key_to_note[event.key], nota_atual)
 
     # Limpa o feedback se já passou o tempo
     if feedback and time.time() - feedback_time > 1.5:
@@ -119,7 +107,11 @@ def processar_eventos (
     if tempo_habilitado:
         tempo_restante = max(tempo_restante, 0)
 
-    return rodando, feedback, feedback_time, vidas, pontuacao, combo, nota_atual, partitura_img, partitura_rect, tempo_restante
+    return (
+        rodando, feedback, feedback_time, vidas,
+        pontuacao, combo, nota_atual, partitura_img,
+        partitura_rect, tempo_restante
+    )
 
 def jogo(background, notas):
     if MUSICA_FUNDO_ATIVADA:

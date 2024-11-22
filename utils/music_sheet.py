@@ -23,7 +23,6 @@ def tornar_fundo_transparente(imagem_path):
     img.putdata(nova_imagem)
     img.save(imagem_path, "PNG")
 
-
 def cortar_imagem(imagem_path):
     # Corta a imagem para capturar apenas a partitura.
     img = Image.open(imagem_path)

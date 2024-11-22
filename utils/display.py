@@ -109,18 +109,5 @@ def exibir_game_over(screen, font, pontuacao, combo_maximo):
 
     pygame.display.flip()
 
-def desenha_tempo_ganho_perdido(tempo, feedback):
-
-    # Exibe o tempo ganho
-    if feedback == "Acertou!":
-        tempo_ganho_texto = small_font.render(f"+{int(tempo)}s", True, LIME_GREEN)
-        screen.blit(tempo_ganho_texto, (screen_width - 320, 20))
-        
-    # Exibe o tempo perdido
-    elif feedback == "Errou!":
-        tempo_perdido_texto = small_font.render(f"-{int(tempo)}s", True, ORANGE_RED)
-        screen.blit(tempo_perdido_texto, (screen_width - 320, 20))
-
-    pygame.display.flip()  # Atualiza a tela
 
 
