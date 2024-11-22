@@ -110,4 +110,3 @@ def exibir_game_over(screen, font, pontuacao, combo_maximo):
     pygame.display.flip()
 
 
-
