@@ -59,12 +59,18 @@ Certifique-se de ter o seguinte instalado:
 
 ---
 
-## Licença 📜  
-Este projeto está licenciado sob a [Licença MIT](LICENSE).  
-
 ---
 
 Vamos tornar o aprendizado musical divertido e acessível para todos! 🎶
+
+---
+
+## Licença 📜  
+Este projeto está licenciado sob a [Licença MIT](LICENSE).  
+
+Este projeto contém partes do código e imagem gerado com a ajuda do modelo de linguagem **GPT** da OpenAI. Embora o conteúdo tenha sido gerado automaticamente, ele foi revisado e adaptado para atender aos requisitos do projeto.
+
+O uso do conteúdo gerado pelo GPT está sujeito aos [Termos de Uso da OpenAI](https://openai.com/policies/terms-of-use).
 
 ---
 
