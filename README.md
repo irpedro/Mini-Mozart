@@ -57,8 +57,6 @@ Certifique-se de ter o seguinte instalado:
 
 ---
 
----
-
 Vamos tornar o aprendizado musical divertido e acessível para todos! 🎶
 
 ---
