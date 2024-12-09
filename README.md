@@ -14,8 +14,6 @@
 
 ---
 
----
-
 ## Vídeo de Propaganda 🎥  
 Confira o vídeo de apresentação do **Mini Mozart** para entender melhor como ele funciona:  
 [Assista ao vídeo aqui](https://share.synthesia.io/d9a32af2-2612-4e31-80cc-31719362b5c7)  
