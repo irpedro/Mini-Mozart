@@ -26,7 +26,7 @@ Confira o vídeo de apresentação do **Mini Mozart** para entender melhor como 
 Certifique-se de ter o seguinte instalado:  
 - [Python](https://www.python.org/) (versão 3.8 ou superior)  
 - [Pygame](https://www.pygame.org/)  
-- [LilyPond](http://lilypond.org/)  
+- [LilyPond](http://lilypond.org/)  (versão 2.2.4 na mesma pasta do Mini Mozart)
 - [Frescobaldi](https://www.frescobaldi.org/)  
 
 ### Passos  
