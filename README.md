@@ -27,7 +27,8 @@ Certifique-se de ter o seguinte instalado:
 - [Python](https://www.python.org/) (versão 3.8 ou superior)  
 - [Pygame](https://www.pygame.org/)  
 - [LilyPond](http://lilypond.org/)  (versão 2.2.4 na mesma pasta do Mini Mozart)
-- [Frescobaldi](https://www.frescobaldi.org/)  
+- [Frescobaldi](https://www.frescobaldi.org/)
+- [Poppler](https://pypi.org/project/python-poppler/) (Na pasta padrão C:\Program Files\poppler\Library\bin")
 
 ### Passos  
 1. Clone o repositório:  
