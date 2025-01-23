@@ -3,6 +3,8 @@
 
 **Mini Mozart** é um jogo educativo interativo para crianças aprenderem música de forma divertida. O objetivo é ensinar leitura de partituras e reconhecimento de notas musicais por meio de desafios e mecânicas envolventes.  
 
+![Tela Principal](main.png)
+
 ---
 
 ## Funcionalidades ✨  
