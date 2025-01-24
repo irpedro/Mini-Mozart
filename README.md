@@ -62,8 +62,9 @@ Certifique-se de ter o seguinte instalado:
 
 Vamos tornar o aprendizado musical divertido e acessível para todos! 🎶
 
-![Icone Mimi Mozart](MiniMozartIcon.jpg)
-<img src="MiniMozartIcon.jpg" width="300" height="200">
+<div align="center">
+    <img src="MiniMozartIcon.jpg" width="300" height="300">
+</div>
 
 ---
 
