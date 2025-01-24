@@ -60,7 +60,9 @@ Certifique-se de ter o seguinte instalado:
 
 ---
 
-Vamos tornar o aprendizado musical divertido e acessível para todos! 🎶
+<p align="center">
+    Vamos tornar o aprendizado musical divertido e acessível para todos! 🎶
+</p>
 
 <div align="center">
     <img src="MiniMozartIcon.jpg" width="300" height="300">
